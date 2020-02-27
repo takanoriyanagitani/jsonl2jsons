@@ -1,3 +1,4 @@
-int jsonl2jsons(FILE* i, FILE* o){
-  return 0;
-}
+#pragma once
+
+#include "jsonl2jsons_append_len.h"
+#include "jsonl2jsons_append.h"

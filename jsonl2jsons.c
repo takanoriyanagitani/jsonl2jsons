@@ -8,7 +8,7 @@ int sub(const char* i, const char* o){
   FILE* fo = NULL;
   fi = NULL == i ? NULL : fopen(i, "rb");
   fo = NULL == o ? NULL : fopen(o, "wb");
-  int ret = jsonl2jsons(fi, fo);
+  int ret = 0;
   int ci = NULL == fi ? 1 : 0 == fclose(fi);
   int co = NULL == fo ? 1 : 0 == fclose(fo);
   return ci && co && 0 == ret ? 0 : -1;
