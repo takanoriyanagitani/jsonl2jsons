@@ -1,0 +1,21 @@
+name: Codecov
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: cmake
+      run:  cmake -D CMAKE_BUILD_TYPE Debug .
+    - name: build
+      run:  cmake --build .
+    - name: ctest
+      run:  ctest
+    - name: Codecov
+      uses: codecov/codecov-action@v1.0.5
+      with:
+        token: 53beab11-5f40-47db-9fb2-2ad87480ff07
