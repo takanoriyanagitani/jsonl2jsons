@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: cmake
-      run:  cmake -D CMAKE_BUILD_TYPE Debug .
+      run:  cmake -D CMAKE_BUILD_TYPE=Debug .
     - name: build
       run:  cmake --build .
     - name: ctest
