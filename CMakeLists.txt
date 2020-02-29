@@ -9,9 +9,10 @@ endif()
 SET(CMAKE_C_FLAGS_DEBUG   "-O0 -g -coverage")
 SET(CMAKE_C_FLAGS_RELEASE "-O3")
 
-add_executable(jsonl2jsons_init_test       jsonl2jsons_init_test.c)
-add_executable(jsonl2jsons_append_len_test jsonl2jsons_append_len_test.c)
-add_executable(jsonl2jsons_append_test     jsonl2jsons_append_test.c)
+add_executable(jsonl2jsons_init_test        jsonl2jsons_init_test.c)
+add_executable(jsonl2jsons_append_len_test  jsonl2jsons_append_len_test.c)
+add_executable(jsonl2jsons_append_test      jsonl2jsons_append_test.c)
+add_executable(jsonl2jsons_append_rows_test jsonl2jsons_append_rows_test.c)
 
 enable_testing()
 
@@ -39,3 +40,7 @@ add_test(NAME jsonl2jsons_append_T7 COMMAND jsonl2jsons_append_test {}\n 2 1 emp
 add_test(NAME jsonl2jsons_append_T8 COMMAND jsonl2jsons_append_test {}\n 3 1 empty, -1)
 add_test(NAME jsonl2jsons_append_T9 COMMAND jsonl2jsons_append_test {}\n 4 1 empty, -1)
 add_test(NAME jsonl2jsons_append_Ta COMMAND jsonl2jsons_append_test {}\n 5 1 [{}, 0)
+
+add_test(NAME jsonl2jsons_append_rows_T1 COMMAND jsonl2jsons_append_rows_test)
+add_test(NAME jsonl2jsons_append_rows_T2 COMMAND jsonl2jsons_append_rows_test i1.jsonl e1.json 70)
+add_test(NAME jsonl2jsons_append_rows_T3 COMMAND jsonl2jsons_append_rows_test i2.jsonl e2.json 70)
